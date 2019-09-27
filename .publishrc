@@ -1,0 +1,11 @@
+{
+    "prePublishScript": false,
+    "validations": {
+        "vulnerableDependencies": false,
+        "uncommittedChanges": false,
+        "untrackedFiles": false,
+        "sensitiveData": false,
+        "branch": false,
+        "gitTag": false
+    }
+}
