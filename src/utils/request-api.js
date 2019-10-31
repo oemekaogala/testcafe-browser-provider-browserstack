@@ -28,6 +28,11 @@ export default function (apiPath, params = {}) {
         json:   apiPath.encoding === void 0
     };
 
+    const proxy = process.env['BROWSERSTACK_PROXY'];
+
+    if (proxy)
+        opts.proxy = `http://${proxy}`;
+
     if (body)
         opts.body = body;
 

@@ -7,6 +7,5 @@
 	    "branch": false,
 	    "gitTag": false
   },
-  "confirm": true,
-  "publishCommand": "npm pack"
+  "confirm": true
 }
