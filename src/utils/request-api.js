@@ -37,7 +37,10 @@ export default function (apiPath, params = {}) {
     const chainPromise = executeImmediately ? Promise.resolve(null) : apiRequestPromise;
 
     let currentRequestPromise = chainPromise
-        .then(() => request(url, opts))
+        .then(() => {
+            process.stdout.write(`\nRequest\n__________\nURL: ${url}\nOptions: ${JSON.stringify(opts)} \n\n`);
+            return request(url, opts);
+        })
         .catch(error => {
             if (error.statusCode === 401)
                 throw new Error(ERROR_MESSAGES.BROWSERSTACK_AUTHENTICATION_FAILED());
